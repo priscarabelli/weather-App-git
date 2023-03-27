@@ -36,6 +36,10 @@ footer{
     color: white;
 
 }
+.git-emoji{
+    width: 20px;
+    clip-path: circle();
+}
 .temperature-big{
  color: rgb(33, 33, 33);
  font-size: 64px;
