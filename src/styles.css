@@ -36,10 +36,6 @@ footer{
     color: white;
 
 }
-.git-emoji{
-    width: 20px;
-    clip-path: circle();
-}
 .temperature-big{
  color: rgb(33, 33, 33);
  font-size: 64px;
@@ -60,15 +56,14 @@ footer{
     border: 1px solid white;
     padding: 15px;
     margin: 50px auto;
-    max-width: 600px;
+    max-width: 700px;
     border-radius: 10px;  
 }
 .weekly-temp {
     text-align: center;
     font-size: 16px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
-
 .weekly-emoji {
     text-align: center;
     font-size: 40px;
@@ -77,7 +72,10 @@ footer{
 .week-days {
     text-align: center;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-
+.git-emoji {
+    width: 25px;
+    clip-path: circle();
+}
