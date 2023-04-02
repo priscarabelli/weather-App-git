@@ -34,6 +34,7 @@ document.querySelector("#humidity").innerHTML = response.data.temperature.humidi
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.condition.description;
 document.querySelector("#current-date").innerHTML = formatDate(response.data.time * 1000);
+document.querySelector("#real-feel").innerHTML = Math.round(response.data.temperature.feels_like);
 document.querySelector("#big-icon").setAttribute("src" , response.data.condition.icon_url);
 };
 
