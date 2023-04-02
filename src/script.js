@@ -27,13 +27,14 @@ function formatDate(timestamp){
 }
 
  function displayWeatherSearch(response){
-  console.log(response.data)
+  console.log(response);
 document.querySelector("#city-input").innerHTML = response.data.city;
 document.querySelector("#temperature-link").innerHTML = Math.round(response.data.temperature.current);
 document.querySelector("#humidity").innerHTML = response.data.temperature.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.condition.description;
 document.querySelector("#current-date").innerHTML = formatDate(response.data.time * 1000);
+document.querySelector("#big-icon").setAttribute("src" , response.data.condition.icon_url);
 };
 
  
@@ -45,8 +46,8 @@ searchCity(city);
 };
 
 function searchLocation(position){
-let apiKey = "feab04436t3405o6e84aadcd05339dfb6";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+let apiKey = "eab04436t3405o6e84aadcd05339dfb6";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayWeatherSearch);
 }
 
