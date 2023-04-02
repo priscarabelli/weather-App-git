@@ -36,6 +36,7 @@ document.querySelector("#description").innerHTML = response.data.condition.descr
 document.querySelector("#current-date").innerHTML = formatDate(response.data.time * 1000);
 document.querySelector("#real-feel").innerHTML = Math.round(response.data.temperature.feels_like);
 document.querySelector("#big-icon").setAttribute("src" , response.data.condition.icon_url);
+document.querySelector("#big-icon").setAttribute("alt" , response.data.condition.description);
 };
 
  
@@ -58,8 +59,6 @@ function getLocalWeather(event){
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-
-
 let searchForm = document.querySelector("#input-form");
 searchForm.addEventListener("submit", searchSubmit);
 
@@ -67,7 +66,8 @@ let currentLocationButton = document.querySelector("#current-button")
 currentLocationButton.addEventListener("click", getLocalWeather);
 searchCity("London");
 
-
+let searchButton = document.querySelector("#search-button");
+searchButton.addEventListener("click", searchSubmit);
 
 
 

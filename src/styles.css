@@ -4,7 +4,7 @@ background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb
 }
 
 h1{
-margin: 5px 0 0;
+margin: 5px 0 3px;
 font-size: 28px;
 font-weight: bold;
 line-height: 28px;
@@ -46,13 +46,18 @@ footer{
  line-height: 1;
 
 }
-.units{
+.units {
     position: relative;
     top:-34px;
 }
 .weather-icon{
-margin-bottom: 40px;
-width: 120px;
+position: relative;
+    top: -20px;
+    width: 120px;
+}
+
+.weather-extra-info{
+    text-align: right;
 }
 .weather-app{
     border: 1px solid white;
