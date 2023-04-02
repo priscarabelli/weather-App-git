@@ -30,6 +30,15 @@ footer{
     padding: 10px;
 }
 
+.weather-temp .active {
+    color:rgb(33, 33, 33);
+    cursor: default;  
+    text-decoration: none;
+}
+.weather-temp .active:hover {
+    text-decoration: none;
+}
+
 #search-button{
     background-color: darkblue;
         color: white;
@@ -57,7 +66,7 @@ position: relative;
 }
 
 .weather-extra-info{
-    text-align: right;
+    text-align:right;
 }
 .weather-app{
     border: 1px solid white;
@@ -66,6 +75,8 @@ position: relative;
     max-width: 700px;
     border-radius: 10px;  
 }
+
+
 .weekly-temp {
     text-align: center;
     font-size: 16px;
