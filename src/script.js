@@ -30,13 +30,23 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
 axios.get(apiUrl).then(displayWeatherSearch);
 }
 
+function formatDate(timestamp){
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let day = date.getDay();
+  return `${day} ${hours}:${minutes}`;
+
+
+}
 
  function displayWeatherSearch(response){
-  document.querySelector("#city-input").innerHTML = response.data.name;
-  document.querySelector("#temperature-link").innerHTML = Math.round(response.data.main.temp);
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
- document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-document.querySelector("#description").innerHTML = response.data.weather[0].main;
+document.querySelector("#city-input").innerHTML = response.data.name;
+document.querySelector("#temperature-link").innerHTML = Math.round(response.data.main.temp);
+document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+document.querySelector("#description").innerHTML = response.data.weather[0].description;
+document.querySelector("#current-date").innerHTML = formatDate(response.data.dt * 1000);
 };
 
  
