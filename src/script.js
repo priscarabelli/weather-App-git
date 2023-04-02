@@ -1,6 +1,6 @@
 function searchCity(city){
-let apiKey = "f09d3949047ab6c9e3bcaf79cf61f619";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+let apiKey = "eab04436t3405o6e84aadcd05339dfb6";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}}&key=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayWeatherSearch);
 }
 
@@ -27,12 +27,13 @@ function formatDate(timestamp){
 }
 
  function displayWeatherSearch(response){
-document.querySelector("#city-input").innerHTML = response.data.name;
-document.querySelector("#temperature-link").innerHTML = Math.round(response.data.main.temp);
-document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  console.log(response.data)
+document.querySelector("#city-input").innerHTML = response.data.city;
+document.querySelector("#temperature-link").innerHTML = Math.round(response.data.temperature.current);
+document.querySelector("#humidity").innerHTML = response.data.temperature.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-document.querySelector("#description").innerHTML = response.data.weather[0].description;
-document.querySelector("#current-date").innerHTML = formatDate(response.data.dt * 1000);
+document.querySelector("#description").innerHTML = response.data.condition.description;
+document.querySelector("#current-date").innerHTML = formatDate(response.data.time * 1000);
 };
 
  
@@ -44,8 +45,8 @@ searchCity(city);
 };
 
 function searchLocation(position){
-let apiKey = "f09d3949047ab6c9e3bcaf79cf61f619";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+let apiKey = "feab04436t3405o6e84aadcd05339dfb6";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayWeatherSearch);
 }
 
