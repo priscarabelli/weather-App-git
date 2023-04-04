@@ -26,6 +26,30 @@ function formatDate(timestamp){
 
 }
 
+function displayForecast(){
+  let forecastElemet = document.querySelector("#weather-forecast");
+ let days = ["Mon", "Tue", "Wed", "Thu", "Fri",];
+  let forecastHTML = `<div class="row">`;
+ days.forEach(function (day){
+ forecastHTML = forecastHTML +
+ ` <div class="col-2"> 
+ <div class="weekly-forecast" id="weather-forecast">
+  <div class="forecast-days">${day}</div>  
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" alt="" width="50"/>
+        <div class="forecast-temp">
+            <span class="max-temp">6° </span>
+            <span class="min-temp">| 3°</span>
+            </div>
+        </div>  
+    </div
+ `;
+  });
+forecastHTML = forecastHTML + `</div>`;
+forecastElemet.innerHTML = forecastHTML;
+}
+
+
+
  function displayWeatherSearch(response){
 celsiusTemperature =  response.data.temperature.current
 document.querySelector("#city-input").innerHTML = response.data.city;
@@ -93,6 +117,7 @@ currentLocationButton.addEventListener("click", getLocalWeather);
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", searchSubmit);
 
+displayForecast();
 
 searchCity("London");
 
