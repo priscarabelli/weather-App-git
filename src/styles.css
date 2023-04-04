@@ -77,21 +77,22 @@ position: relative;
 }
 
 
-.weekly-temp {
+.weekly-forecast {
     text-align: center;
-    font-size: 16px;
     margin-top: 20px;
 }
-.weekly-emoji {
-    text-align: center;
-    font-size: 40px;
+.forecast-days{
+font-size: 16px;
+opacity: 0.5;
+
+}
+.forecast-temp{
+    font-size: 16px;
+}
+.min-temp{
+ opacity: 0.5;
 }
 
-.week-days {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 15px;
-}
 
 .git-emoji {
     width: 25px;
