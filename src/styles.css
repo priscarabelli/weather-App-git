@@ -72,7 +72,7 @@ position: relative;
     border: 1px solid #bababa;
     padding: 15px;
     margin: 50px auto;
-    max-width: 700px;
+    max-width: 900px;
     border-radius: 10px;  
 }
 
@@ -80,8 +80,6 @@ position: relative;
 .weekly-forecast {
     text-align: center;
     margin-top: 20px;
-    display: flex;
-    max-width: fit-content;
 }
 .forecast-days{
 font-size: 16px;

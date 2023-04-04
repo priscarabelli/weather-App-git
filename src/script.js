@@ -26,9 +26,10 @@ function formatDate(timestamp){
 
 }
 
-function displayForecast(){
+function displayForecast(response){
+  console.log(response.data);
   let forecastElemet = document.querySelector("#weather-forecast");
- let days = ["Mon", "Tue", "Wed", "Thu", "Fri",];
+ let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", ];
   let forecastHTML = `<div class="row">`;
  days.forEach(function (day){
  forecastHTML = forecastHTML +
@@ -41,7 +42,7 @@ function displayForecast(){
             <span class="min-temp">| 3°</span>
             </div>
         </div>  
-    </div
+    </div>
  `;
   });
 forecastHTML = forecastHTML + `</div>`;
@@ -49,8 +50,16 @@ forecastElemet.innerHTML = forecastHTML;
 }
 
 
+function getForecast(coordinates){
+  console.log(coordinates.data);
+  let apiKey = "eab04436t3405o6e84aadcd05339dfb6";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`
+
+  axios.get(apiUrl).then(displayForecast);
+}
 
  function displayWeatherSearch(response){
+  console.log(response.data);
 celsiusTemperature =  response.data.temperature.current
 document.querySelector("#city-input").innerHTML = response.data.city;
 document.querySelector("#temperature-link").innerHTML = Math.round(celsiusTemperature);
@@ -61,6 +70,9 @@ document.querySelector("#current-date").innerHTML = formatDate(response.data.tim
 document.querySelector("#real-feel").innerHTML = Math.round(response.data.temperature.feels_like);
 document.querySelector("#big-icon").setAttribute("src" , response.data.condition.icon_url);
 document.querySelector("#big-icon").setAttribute("alt" , response.data.condition.description);
+
+getForecast(response.data.coordinates);
+
 };
 
  
@@ -116,8 +128,6 @@ currentLocationButton.addEventListener("click", getLocalWeather);
 
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", searchSubmit);
-
-displayForecast();
 
 searchCity("London");
 
