@@ -23,20 +23,19 @@
         <div class="input-group mb-3">
             <input type="text" class="form-control" id="search-bar" autocomplete="off" placeholder="Enter city here">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" id="search-button" type="button">Search</button>
-                <button class=" btn btn-outline-secondary" id="current-button" type = "button">Local Weather📍</button>
+                <button class="btn btn-outline-secondary" id="search-button" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class=" btn btn-outline-secondary" id="current-button" type = "button"><i class="fa-solid fa-location-dot"></i></button>
             </div>
         </div>
 </form>
  <h1 class="city" id="city-input"> London </h1>
 <ul class="day-time-weather">
-    <li class ="day-time" >Last updated:
-    <span id="current-date"></span>
+    <li class ="day-time" > 
+    <span id="current-date"> </span>
     </li>
     <li >
-    <span id="description">Cloudy </span>
+    <span id="description"> </span>
     </li>
-</ul>
 <div class="row">
     <div class="col-6 weather-temp">
 <img 
@@ -62,14 +61,15 @@ id="big-icon"
         Feels like: <span id="real-feel"></span>°C
     </li>
 </ul>
-    </div>
+</div>
+</div>
 
 <div class="weekly-forecast" id="weather-forecast"></div>
 
 <footer>
     <a href="https://github.com/priscarabelli/weather-App-git" target="_blank
 "><img src="images/githubcat.jpg" class="git-emoji"/></a>
-    <span> by Pri Scarabelli </span>
+    <span class="name"> by Pri Scarabelli </span>
 </br>
     <span>Hosted by </span><a href="https://graceful-brioche-a21e87.netlify.app/" target="_blank">Netlify</a>
 </footer>
