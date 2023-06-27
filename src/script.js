@@ -41,11 +41,12 @@ function displayForecast(response){
  forecast.forEach(function (forecastDay , index){ 
   if (index < 6){
  forecastHTML = forecastHTML +
- ` <div class="col-2"> 
+ ` <div class="col-sm-2"> 
  <div class="weekly-forecast" id="weather-forecast">
   <div class="forecast-days">${formatDay(forecastDay.time)}</div>  
             <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" 
       alt="" 
+      class="img-fluid"
       width="80px">
         <div class="forecast-temp">
             <span class="max-temp">${Math.round(forecastDay.temperature.maximum)}° </span>
