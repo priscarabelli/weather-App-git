@@ -85,7 +85,7 @@ footer{
 position: relative;
 left: -22px;
     top: -20px;
-    width: 150px;
+    width:150px;
 }
 .weather-extra-info{
     text-align:right;
@@ -112,3 +112,39 @@ font-size: 20px;
 .name {
     color: gainsboro;
     font-style: italic;}
+
+ @media (max-width:900px) {
+    body{
+        background-image: url(../images/backgroundsmall.png);
+        background-repeat: repeat;
+    }
+    h1 {
+        margin: 20px;
+        }
+    li{ text-align: center;}
+    .temperature-big{
+            position: relative;
+            left: 20px
+        }
+    
+    .units{
+        position: relative;
+            top: -45px;
+            left: 20px;
+    }
+    .weather-icon {
+position: relative;
+    left: 20px;
+    top: -20px;
+    width: 150px;
+    }
+    .weather-extra-info{
+        margin-top: -20px;
+    }
+    .weekly-forecast{
+        margin: 10px;
+    }
+    .weekly-icon{
+width: 50%;
+    }
+    }
