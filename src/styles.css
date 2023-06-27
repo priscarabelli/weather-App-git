@@ -147,4 +147,8 @@ position: relative;
     .weekly-icon{
 width: 50%;
     }
+    .weather-app{
+        max-width: 90%;
+   
+    }
     }
